@@ -25,7 +25,11 @@ class Register extends React.Component {
     onSubmitRegister = () => {
         fetch('https://face-detection-node.onrender.com/register', {
             method: 'post',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+            },
             body: JSON.stringify({
                 name: this.state.name,
                 email: this.state.email,

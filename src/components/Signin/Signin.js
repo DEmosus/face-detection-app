@@ -39,6 +39,8 @@ class Signin extends React.Component {
                         method: 'get',
                         headers: {
                           'Content-Type': 'application/json',
+                          'Access-Control-Allow-Origin':'*',
+                          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
                           'Authorization': data.token
                         }
                     })

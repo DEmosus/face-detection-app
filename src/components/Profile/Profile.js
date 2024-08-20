@@ -33,6 +33,8 @@ class Profile extends React.Component {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
                 'Authorization': window.sessionStorage.getItem('token')
             },
             body: JSON.stringify({ formInput: data })

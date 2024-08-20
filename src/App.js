@@ -84,6 +84,8 @@ class  App extends Component {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
           'Authorization': token
         }
       })
@@ -94,6 +96,8 @@ class  App extends Component {
               method: 'get',
               headers: {
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
                 'Authorization': token
               }
             })
@@ -163,6 +167,8 @@ class  App extends Component {
           method: 'put',
           headers: {
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
             'Authorization': window.sessionStorage.getItem('token')
           },
           body: JSON.stringify({

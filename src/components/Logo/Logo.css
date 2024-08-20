@@ -1,0 +1,16 @@
+.Tilt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background-color: linear-gradient(to right, rgb(102, 57, 157), rgb(170, 70, 162));
+  background: linear-gradient(to right, rgb(102, 57, 157), rgb(170, 70, 162));
+  border: 2px solid black;
+  border-radius: 20px;
+
+  transform-style: preserve-3d;
+}
+  
+

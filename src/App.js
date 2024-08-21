@@ -89,25 +89,24 @@ class  App extends Component {
         }
       })
         .then(resp => resp.json())
-        .then(data => {
-          if (data && data.id) {
-            fetch(`https://face-detection-node.onrender.com/profile/${data.id}`, {
-              method: 'get',
-              headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin':'*',
-                'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
-              }
-            })
-            .then(resp => resp.json())
-            .then(user => {
+        .then(user => {
+          // if (data && data.id) {
+          //   fetch(`https://face-detection-node.onrender.com/profile/${data.id}`, {
+          //     method: 'get',
+          //     headers: {
+          //       'Content-Type': 'application/json',
+          //       'Access-Control-Allow-Origin':'*',
+          //       'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
+          //     }
+          //   })
+          //   .then(resp => resp.json())
+          //   .then(user => {
               if (user && user.email) {
-                console.log(user)
                 this.loadUser(user)
                 this.onRouteChange('home');
               }
-            })
-          }
+            // })
+          // }
         })
         .catch(console.log)
     // }

@@ -31,30 +31,15 @@ class Signin extends React.Component {
                 password: this.state.signInPassword
             })
         })
-            .then(response => response.json())
-            .then(data => {
-                if(data.userId && data.success === 'true') {
-                    this.saveAuthTokenInSession(data.token)
-                    fetch(`https://face-detection-node.onrender.com/${data.userId}`, {
-                        method: 'get',
-                        headers: {
-                          'Content-Type': 'application/json',
-                          'Access-Control-Allow-Origin':'*',
-                          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
-                          'Authorization': data.token
-                        }
-                    })
-                    .then(resp => resp.json())
-                    .then(user => {
-                        if (user && user.email) {
-                        console.log(user)
-                        this.props.loadUser(user)
-                        this.props.onRouteChange('home');
-                        }
-                    })                
-                  .catch(console.log)
+         
+            .then(resp => resp.json())
+            .then(user => {
+                if (user && user.email) {
+                console.log(user)
+                this.props.loadUser(user)
+                this.props.onRouteChange('home');
                 }
-            })
+            })                      
     }
 
     render() {

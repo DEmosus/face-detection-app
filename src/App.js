@@ -78,15 +78,14 @@ class  App extends Component {
   }
 
   componentDidMount() {
-    const token = window.sessionStorage.getItem('token');
-    if (token) {
+    // const token = window.sessionStorage.getItem('token');
+    // if (token) {
       fetch('https://face-detection-node.onrender.com/signin', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin':'*',
           'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
-          'Authorization': token
         }
       })
         .then(resp => resp.json())
@@ -98,7 +97,6 @@ class  App extends Component {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin':'*',
                 'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
-                'Authorization': token
               }
             })
             .then(resp => resp.json())
@@ -112,7 +110,7 @@ class  App extends Component {
           }
         })
         .catch(console.log)
-    }
+    // }
   }
 
   loadUser = (data) => {
@@ -169,7 +167,7 @@ class  App extends Component {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin':'*',
             'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
-            'Authorization': window.sessionStorage.getItem('token')
+            // 'Authorization': window.sessionStorage.getItem('token')
           },
           body: JSON.stringify({
             id: this.state.user.id

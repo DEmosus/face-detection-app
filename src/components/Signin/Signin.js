@@ -18,9 +18,9 @@ class Signin extends React.Component {
         this.setState({signInPassword: event.target.value})
     }
 
-    saveAuthTokenInSession = (token) => {
-        window.sessionStorage.setItem('token', token);
-    }
+    // saveAuthTokenInSession = (token) => {
+    //     window.sessionStorage.setItem('token', token);
+    // }
 
     onSubmitSignIn = () => {
         fetch('https://face-detection-node.onrender.com/signin', {
